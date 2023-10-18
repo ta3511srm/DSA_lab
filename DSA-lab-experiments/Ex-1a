@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main(){
+  struct student{
+char name[30];
+int rollno.;
+char dept[4];
+float cgpa;
+};
+struct student S;
+printf("Enter the name of the student:\n");
+scanf("%s",&s.name);
+printf("Enter the roll number:\n");
+scanf("%d",&s.rollno.);
+printf("Enter the department:\n");
+scanf("%s",&s.dept);
+printf("Enter the cgpa:");
+scanf("%f",&s.cgpa);
+printf("\n Name of the student is:%s",s.name);
+printf("\n The roll no is:%d",s.rollno);
+printf("\n The department is:%s",s.dept);
+printf("\n The cgpa is:%f",s.name);
+return 0;
+}
+

@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct student {
+    int rollno;
+    char name[20];
+    char dept[4];
+    float cgpa;
+};
+
+int main() {
+    int n;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    struct student* ptr[n];
+    for (int i = 0; i < n; i++) {
+        ptr[i] = (struct student*)malloc(sizeof(struct student));
+        printf("Enter name: ");
+        scanf("%s", ptr[i]->name);
+        printf("Enter roll no: ");
+        scanf("%d", &ptr[i]->rollno);
+        printf("Enter dept: ");
+        scanf("%s", ptr[i]->dept);
+        printf("Enter cgpa: ");
+        scanf("%f", &ptr[i]->cgpa);
+    }
+
+    for (int j = 0; j < n; j++) {
+        printf("Name is: %s\n", ptr[j]->name);
+        printf("Roll no is: %d\n", ptr[j]->rollno);
+        printf("Department is: %s\n", ptr[j]->dept);
+        printf("CGPA is: %.2f\n", ptr[j]->cgpa);
+    }
+
+    return 0;
+}

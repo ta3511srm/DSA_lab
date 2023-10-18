@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+#define ROW1 2   // Number of rows in the first matrix
+#define COL1 3   // Number of columns in the first matrix
+#define ROW2 3   // Number of rows in the second matrix
+#define COL2 2   // Number of columns in the second matrix
+
+int main() {
+    // Define the matrices with static memory allocation
+    int matrix1[ROW1][COL1];
+    int matrix2[ROW2][COL2];
+    int result[ROW1][COL2];  // The result matrix
+
+    // Input for the first matrix
+    printf("Enter elements of the first matrix (%d x %d):\n", ROW1, COL1);
+    for (int i = 0; i < ROW1; i++) {
+        for (int j = 0; j < COL1; j++) {
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    // Input for the second matrix
+    printf("Enter elements of the second matrix (%d x %d):\n", ROW2, COL2);
+    for (int i = 0; i < ROW2; i++) {
+        for (int j = 0; j < COL2; j++) {
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+
+    // Perform matrix multiplication
+    for (int i = 0; i < ROW1; i++) {
+        for (int j = 0; j < COL2; j++) {
+            result[i][j] = 0;
+            for (int k = 0; k < COL1; k++) {
+                result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+
+    // Display the result
+    printf("Resultant matrix:\n");
+    for (int i = 0; i < ROW1; i++) {
+        for (int j = 0; j < COL2; j++) {
+            printf("%d\t", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
